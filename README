@@ -1,0 +1,8 @@
+A few scripts and files to aid in using linux. At present I have included;
+
+#1. A bash script to build and install alsaequal in linux.
+(I made this in 2011 for Ubuntu which didn't have alsaequal in it's repo at the time. I believe it should be
+included in pretty much every distro's repo now, so check that. I doubt you'll be needing this.)
+
+#2. A syntax-highlighting nanorc for the editor 'nano'. I couldn't find one, so I made this.
+
