@@ -1,0 +1,41 @@
+## Custom syntax highlighting for erlang
+syntax "erlang" "\.?erl$"
+
+## Function definitions
+color brightwhite "^[a-z]+[(]"
+
+## Arguments, Parameters, Tuples, Maps
+color blue start="\(" end="\)+[)]*"
+color yellow start="\[" end="\]+[]]*"
+color magenta start="\{" end="\}+[}]*"
+color cyan start="\#\{" end="\}+[}]*"
+
+## Special Characters
+color green "[-+/*=;><,|:]"
+color yellow "(\++|\--|\|\||<-)"
+color brightred "(\->|\.|\!|=>)"
+
+## Integers, Floats
+color cyan "\<[0-9_]+\>"
+color cyan "\<[0-9].[0-9]+\>"
+
+## Variables (Because Erlang variables are different to atoms!)
+color brightblue "[A-Z][a-z]*"
+
+## Keywords
+color brightred "^[-]+(module|export|import|compile|vsn|on_load|behaviour|callback|record|include|define|file|type|spec)"
+color red "\<(and|or|xor|not|band|bor|bxor|bnot)\>"
+color brightcyan "\<(andalso|bsl|bsr|div|orelse)\>"
+color green "\<(after|begin|case|catch|cond|end|fun|if|receive|rem|try|when)\>"
+
+## Standard Modules
+color red "(array|assert.rt|base64|beam_lib|binary|c|calendar|dets|dict|digraph(_utils)?|epp|erl_(anno|eval|expanded_records|id_trans|internal|lint|parse|pp|scan|tar)?|ets|file(_sorter|lib|name)?|gb_(sets|trees)?|gen_(event|fsm|server)?|io(_lib)?|lib|lists|log_mf_h|maps|math|ms_transform|orddict|ordsets|pool|proc_lib|proplists|qlc|queue|rand|random|re|sets|shell(_default)?|slave|sofs|STDLIB_app|supervisor(_bridge)?|sys|timer|unicode|win32reg|zip)[:]+"
+
+## Strings
+icolor magenta ""(\\.|[^"])*""
+
+## Comments
+icolor brightblack "(^|[[:space:]]+)%.*$"
+
+## Trailing whitespace
+color ,green "[[:space:]]+$"
